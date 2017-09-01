@@ -1,4 +1,5 @@
 class TodoItemsController < ApplicationController
+  before_action :authorize
   before_action :set_todo_item, only: [:show, :edit, :update, :destroy]
 
   # GET /todo_items
@@ -69,6 +70,6 @@ class TodoItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def todo_item_params
-      params.require(:todo_item).permit(:description)
+      params.require(:todo_item).permit(:description, :due_date)
     end
 end

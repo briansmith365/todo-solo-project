@@ -6,14 +6,15 @@
   <thead>
     <tr>
       <th>Description</th>
-      <th colspan="3"></th>
+      <th>Due Date</th>
     </tr>
   </thead>
 
   <tbody>
     <% @todo_items.each do |todo_item| %>
-      <tr>
+      <tr style="color: <%= todo_item.past_due ? 'red' : 'black' %>">
         <td><%= todo_item.description %></td>
+        <td><%= todo_item.due_date %></td>
         <td><%= link_to 'Show', todo_item %></td>
         <td><%= link_to 'Edit', edit_todo_item_path(todo_item) %></td>
         <td><%= link_to 'Destroy', todo_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

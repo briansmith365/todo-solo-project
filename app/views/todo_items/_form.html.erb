@@ -14,6 +14,8 @@
   <div class="field">
     <%= form.label :description %>
     <%= form.text_field :description, id: :todo_item_description %>
+    <%= form.label :due_date %>
+    <%= form.date_field :due_date, id: :todo_item_due_date %>
   </div>
 
   <div class="actions">
